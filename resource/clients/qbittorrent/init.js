@@ -1,7 +1,7 @@
 /**
  * @see https://github.com/qbittorrent/qBittorrent/wiki/Web-API-Documentation
  */
-(function($) {
+(function ($) {
   //qBittorrent
   class Client {
     /**
@@ -169,15 +169,18 @@
         formData.append("paused", !data.autoStart);
       }
 
-      if (data.imdbId != undefined) {
-        formData.append("tags", data.imdbId);
-      }
-
       if (data.upLoadLimit && data.upLoadLimit > 0) {
         formData.append("upLimit", data.upLoadLimit * 1024);
       }
 
       let url = data.url;
+
+      let split_name = data.name.split(".");
+
+      if (split_name.length == 3) {
+        formData.append("category", split_name[1]);
+        formData.append("tags", split_name[2]);
+      }
 
       // 磁性连接
       if (url.startsWith('magnet:')) {

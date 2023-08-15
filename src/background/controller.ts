@@ -262,6 +262,7 @@ export default class Controller {
     return new Promise((resolve?: any, reject?: any) => {
       clientConfig.client
         .call(EAction.addTorrentFromURL, {
+          name: clientConfig.options.name,
           url: downloadOptions.url,
           savePath: downloadOptions.savePath,
           autoStart:

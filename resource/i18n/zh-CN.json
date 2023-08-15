@@ -538,7 +538,7 @@
           "cancel": "取消"
         },
         "editor": {
-          "name": "服务器名称",
+          "name": "服务器名称, catagory和tags用.分开,例如qb.movie.saved",
           "type": "服务器类型",
           "address": "服务器地址",
           "addressTip": "完整的服务器地址（含端口），如：http://192.168.1.1:5000/",
